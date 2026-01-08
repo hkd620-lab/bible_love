@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "82837744396",
+    "project_id": "bible-love-hkd620",
+    "storage_bucket": "bible-love-hkd620.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82837744396:android:66b6acd84861c55feb3729",
+        "android_client_info": {
+          "package_name": "com.example.bible_love"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9PU2lvQKwGlOZ_ezTDjKW7R0QnvLCNFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
