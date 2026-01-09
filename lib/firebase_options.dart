@@ -83,4 +83,5 @@ class DefaultFirebaseOptions {
     authDomain: 'bible-love-hkd620.firebaseapp.com',
     storageBucket: 'bible-love-hkd620.firebasestorage.app',
   );
+
 }

@@ -1,0 +1,272 @@
+Checking for wireless devices...
+
+Connected devices:
+macOS (desktop) • macos  • darwin-arm64   • macOS 15.7.1 24G231 darwin-arm64
+Chrome (web)    • chrome • web-javascript • Google Chrome 143.0.7499.193
+[1]: macOS (macos)
+[2]: Chrome (chrome)
+Please choose one (or "q" to quit): 1
+Resolving dependencies...
+Downloading packages...
+  audio_session 0.1.25 (0.2.2 available)
+  characters 1.4.0 (1.4.1 available)
+  flutter_lints 5.0.0 (6.0.0 available)
+  lints 5.1.1 (6.0.0 available)
+  matcher 0.12.17 (0.12.18 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  meta 1.16.0 (1.17.0 available)
+  test_api 0.7.6 (0.7.9 available)
+Got dependencies!
+8 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Launching lib/main.dart on macOS in debug mode...
+Running pod install...                                             24.5s
+Building macOS application...                                   
+ld: warning: ignoring duplicate libraries: '-lc++'
+In file included from /Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/zutil.c:8:
+/Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/zutil.h:170:11: warning: 'OS_CODE' macro redefined [-Wmacro-redefined]
+  170 | #  define OS_CODE 19
+      |           ^
+  141 | #  define OS_CODE  7
+      |           ^
+1 warning generated.
+In file included from /Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/trees.c:37:
+In file included from /Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/deflate.h:16:
+/Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/zutil.h:170:11: warning: 'OS_CODE' macro redefined [-Wmacro-redefined]
+  170 | #  define OS_CODE 19
+      |           ^
+  141 | #  define OS_CODE  7
+      |           ^
+1 warning generated.
+In file included from /Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/inftrees.c:6:
+/Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/zutil.h:170:11: warning: 'OS_CODE' macro redefined [-Wmacro-redefined]
+  170 | #  define OS_CODE 19
+      |           ^
+  141 | #  define OS_CODE  7
+      |           ^
+1 warning generated.
+In file included from /Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/inflate.c:83:
+/Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/zutil.h:170:11: warning: 'OS_CODE' macro redefined [-Wmacro-redefined]
+  170 | #  define OS_CODE 19
+      |           ^
+  141 | #  define OS_CODE  7
+      |           ^
+1 warning generated.
+In file included from /Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/inffast.c:6:
+/Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/zutil.h:170:11: warning: 'OS_CODE' macro redefined [-Wmacro-redefined]
+  170 | #  define OS_CODE 19
+      |           ^
+  141 | #  define OS_CODE  7
+      |           ^
+1 warning generated.
+In file included from /Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/infback.c:13:
+/Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/zutil.h:170:11: warning: 'OS_CODE' macro redefined [-Wmacro-redefined]
+  170 | #  define OS_CODE 19
+      |           ^
+  141 | #  define OS_CODE  7
+      |           ^
+1 warning generated.
+In file included from /Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/deflate.c:52:
+In file included from /Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/deflate.h:16:
+/Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/zutil.h:170:11: warning: 'OS_CODE' macro redefined [-Wmacro-redefined]
+  170 | #  define OS_CODE 19
+      |           ^
+  141 | #  define OS_CODE  7
+      |           ^
+1 warning generated.
+In file included from /Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/crc32.c:30:
+/Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/zutil.h:170:11: warning: 'OS_CODE' macro redefined [-Wmacro-redefined]
+  170 | #  define OS_CODE 19
+      |           ^
+  141 | #  define OS_CODE  7
+      |           ^
+1 warning generated.
+In file included from /Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/adler32.c:8:
+/Users/heogyeongdae/bible_love/macos/Pods/gRPC-Core/third_party/zlib/zutil.h:170:11: warning: 'OS_CODE' macro redefined [-Wmacro-redefined]
+  170 | #  define OS_CODE 19
+      |           ^
+  141 | #  define OS_CODE  7
+      |           ^
+1 warning generated.
+ld: warning: ignoring duplicate libraries: '-lc++'
+ld: warning: ignoring duplicate libraries: '-lc++'
+ld: warning: ignoring duplicate libraries: '-lc++'
+ld: warning: ignoring duplicate libraries: '-lc++'
+/Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_core-4.3.0/macos/firebase_core/Sources/firebase_core/FLTFirebaseCorePlugin.m:92:35: warning: incompatible pointer types assigning to 'NSString * _Nullable' from 'NSNull * _Nonnull' [-Wincompatible-pointer-types]
+   92 |   pigeonOptions.deepLinkURLScheme = [NSNull null];
+      |                                   ^ ~~~~~~~~~~~~~
+1 warning generated.
+/Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTPhoneNumberVerificationStreamHandler.m:10:17: warning: method definition for 'initWithAuth:arguments:' not found [-Wincomplete-implementation]
+   10 | @implementation FLTPhoneNumberVerificationStreamHandler {
+      |                 ^
+In file included from /Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTPhoneNumberVerificationStreamHandler.m:7:
+   26 | - (instancetype)initWithAuth:(FIRAuth *)auth arguments:(NSDictionary *)arguments;
+      | ^
+1 warning generated.
+/Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTFirebaseAuthPlugin.m:127:72: warning: sending 'FLTFirebaseAuthPlugin *__strong' to parameter of incompatible type 'id<FLTFirebasePlugin> _Nonnull'
+  127 |     [[FLTFirebasePluginRegistry sharedInstance] registerFirebasePlugin:self];
+      |                                                                        ^~~~
+In module 'firebase_core' imported from /Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTFirebaseAuthPlugin.m:9:
+   23 | - (void)registerFirebasePlugin:(id<FLTFirebasePlugin> _Nonnull)firebasePlugin;
+      |                                                                ^
+/Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTFirebaseAuthPlugin.m:408:14: warning: unused variable 'capturedCompletion' [-Wunused-variable]
+  408 |       void (^capturedCompletion)(PigeonUserCredential *_Nullable, FlutterError *_Nullable) =
+      |              ^~~~~~~~~~~~~~~~~~
+/Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTFirebaseAuthPlugin.m:419:14: warning: unused variable 'capturedCompletion' [-Wunused-variable]
+  419 |       void (^capturedCompletion)(PigeonUserCredential *_Nullable, FlutterError *_Nullable) =
+      |              ^~~~~~~~~~~~~~~~~~
+/Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTFirebaseAuthPlugin.m:430:14: warning: unused variable 'capturedCompletion' [-Wunused-variable]
+  430 |       void (^capturedCompletion)(PigeonUserCredential *_Nullable, FlutterError *_Nullable) =
+      |              ^~~~~~~~~~~~~~~~~~
+/Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTFirebaseAuthPlugin.m:1166:9: warning: 'fetchSignInMethodsForEmail:completion:' is deprecated: `fetchSignInMethods` is deprecated and will be removed in a future release. This method returns an empty list when Email Enumeration Protection is enabled. [-Wdeprecated-declarations]
+ 1166 |   [auth fetchSignInMethodsForEmail:email
+      |         ^
+In module 'FirebaseAuth' imported from /Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTFirebaseAuthPlugin.m:5:
+  496 | - (void)fetchSignInMethodsForEmail:(NSString * _Nonnull)email completion:(void (^ _Nullable)(NSArray<NSString *> * _Nullable, NSError * _Nullable))completion SWIFT_DEPRECATED_MSG("`fetchSignInMethods` is deprecated and will be removed in a future release. This method returns an empty list when Email Enumeration Protection is enabled.");
+      |                                                                                                                                                               ^
+  221 | # define SWIFT_DEPRECATED_MSG(...) __attribute__((deprecated(__VA_ARGS__)))
+      |                                                   ^
+/Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTFirebaseAuthPlugin.m:1973:16: warning: 'updateEmail:completion:' is deprecated: `updateEmail` is deprecated and will be removed in a future release. Use sendEmailVerification(beforeUpdatingEmail:) instead. [-Wdeprecated-declarations]
+ 1973 |   [currentUser updateEmail:newEmail
+      |                ^
+In module 'FirebaseAuth' imported from /Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTFirebaseAuthPlugin.m:5:
+ 1828 | - (void)updateEmail:(NSString * _Nonnull)email completion:(void (^ _Nullable)(NSError * _Nullable))completion SWIFT_DEPRECATED_MSG("`updateEmail` is deprecated and will be removed in a future release. Use sendEmailVerification(beforeUpdatingEmail:) instead.");
+      |                                                                                                               ^
+  221 | # define SWIFT_DEPRECATED_MSG(...) __attribute__((deprecated(__VA_ARGS__)))
+      |                                                   ^
+/Users/heogyeongdae/.pub-cache/hosted/pub.dev/firebase_auth-6.1.3/macos/firebase_auth/Sources/firebase_auth/FLTFirebaseAuthPlugin.m:579:13: warning: unused function 'handleAppleAuthResult' [-Wunused-function]
+  579 | static void handleAppleAuthResult(FLTFirebaseAuthPlugin *object, AuthPigeonFirebaseApp *app,
+      |             ^~~~~~~~~~~~~~~~~~~~~
+7 warnings generated.
+/Users/heogyeongdae/.pub-cache/hosted/pub.dev/cloud_firestore-6.1.1/macos/cloud_firestore/Sources/cloud_firestore/FLTFirebaseFirestorePlugin.m:571:14: warning: 'setIndexConfigurationFromJSON:completion:' is deprecated: Instead of creating cache indexes manually, consider using `PersistentCacheIndexManager.enableIndexAutoCreation()` to let the SDK decide whether to create cache indexes for queries running locally. [-Wdeprecated-declarations]
+  571 |   [firestore setIndexConfigurationFromJSON:indexConfiguration
+      |              ^
+In module 'FirebaseFirestoreInternal' imported from /Users/heogyeongdae/.pub-cache/hosted/pub.dev/cloud_firestore-6.1.1/macos/cloud_firestore/Sources/cloud_firestore/FLTFirebaseFirestorePlugin.m:13:
+  134 |     NS_SWIFT_NAME(setIndexConfiguration(_:completion:)) DEPRECATED_MSG_ATTRIBUTE(
+      |                                                         ^
+In module '_DarwinFoundation1' imported from /Users/heogyeongdae/.pub-cache/hosted/pub.dev/cloud_firestore-6.1.1/macos/cloud_firestore/Sources/cloud_firestore/FLTFirebaseFirestorePlugin.m:12:
+  152 |             #define DEPRECATED_MSG_ATTRIBUTE(s) __attribute__((deprecated(s)))
+      |                                                                ^
+1 warning generated.
+/Users/heogyeongdae/bible_love/macos/Pods/Pods.xcodeproj: warning: The macOS deployment target 'MACOSX_DEPLOYMENT_TARGET' is set to 10.11, but the range of supported deployment target versions is 10.13 to 26.0.99. (in target 'abseil-xcprivacy' from project 'Pods')
+/Users/heogyeongdae/bible_love/macos/Pods/Pods.xcodeproj: warning: The macOS deployment target 'MACOSX_DEPLOYMENT_TARGET' is set to 10.11, but the range of supported deployment target versions is 10.13 to 26.0.99. (in target 'abseil' from project 'Pods')
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'abseil' from project 'Pods')
+/Users/heogyeongdae/bible_love/macos/Pods/Pods.xcodeproj: warning: The macOS deployment target 'MACOSX_DEPLOYMENT_TARGET' is set to 10.12, but the range of supported deployment target versions is 10.13 to 26.0.99. (in target 'BoringSSL-GRPC-openssl_grpc' from project 'Pods')
+/Users/heogyeongdae/bible_love/macos/Pods/Pods.xcodeproj: warning: The macOS deployment target 'MACOSX_DEPLOYMENT_TARGET' is set to 10.12, but the range of supported deployment target versions is 10.13 to 26.0.99. (in target 'BoringSSL-GRPC' from project 'Pods')
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'BoringSSL-GRPC' from project 'Pods')
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'gRPC-Core' from project 'Pods')
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'gRPC-C++' from project 'Pods')
+✓ Built build/macos/Build/Products/Debug/bible_love.app
+2026-01-09 19:23:54.168 bible_love[18787:151192] Running with merged UI and platform thread. Experimental.
+Failed to foreground app; open returned 1
+Syncing files to device macOS...                                    45ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on macOS is available at: http://127.0.0.1:49766/LKyzTqqNAaw=/
+The Flutter DevTools debugger and profiler on macOS is available at: http://127.0.0.1:9100?uri=http://127.0.0.1:49766/LKyzTqqNAaw=/
+
+
+
+
+
+
+
+
+
+
+
+Performing hot restart...                                       
+Restarted application in 720ms.
+
+Performing hot restart...                                       
+Restarted application in 661ms.
+flutter: VERSE_ID=1thess_1_8_niv
+flutter: RAW={version: NIV
+flutter: , segments: [{audioUrl: https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3, ko: 주님의 말씀이, t: The Lord's message
+flutter: }], textEn: The Lord's message rang out from you not only in Macedonia and Achaia—your faith in God has become known everywhere., ref: 1 Thessalonians 1:8}
+flutter: VERSE_ID=1thess_1_8_niv
+flutter: RAW={version: NIV
+flutter: , segments: [{audioUrl: https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3, ko: 주님의 말씀이, t: The Lord's message
+flutter: }], textEn: The Lord's message rang out from you not only in Macedonia and Achaia—your faith in God has become known everywhere., ref: 1 Thessalonians 1:8}
+flutter: VERSE_ID=1thess_1_8_niv
+flutter: RAW={version: NIV
+flutter: , segments: [{audioUrl: https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3, ko: 주님의 말씀이, t: The Lord's message
+flutter: }], textEn: The Lord's message rang out from you not only in Macedonia and Achaia—your faith in God has become known everywhere., ref: 1 Thessalonians 1:8}
+
+Performing hot restart...                                       
+Restarted application in 672ms.
+flutter: VERSE_ID=1thess_1_8_niv
+flutter: RAW={version: NIV
+flutter: , segments: [{audioUrl: https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3, ko: 주님의 말씀이, t: The Lord's message
+flutter: }], textEn: The Lord's message rang out from you not only in Macedonia and Achaia—your faith in God has become known everywhere., ref: 1 Thessalonians 1:8}
+
+Performing hot reload...                                        
+lib/features/reading/verse_play_page.dart:314:48: Error: String starting with ' must end with '.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                                               ^^
+lib/features/reading/verse_play_page.dart:314:27: Error: Can't find ')' to match '('.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                          ^
+lib/features/reading/verse_play_page.dart:314:20: Error: Can't find ')' to match '('.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                   ^
+lib/features/reading/verse_play_page.dart:314:28: Error: Expected ';' after this.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                           ^^^^^^^^^^^^
+lib/features/reading/verse_play_page.dart:314:41: Error: Expected an identifier, but got ']'.
+Try inserting an identifier before ']'.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                                        ^
+lib/features/reading/verse_play_page.dart:314:41: Error: Unexpected token ';'.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                                        ^
+lib/features/reading/verse_play_page.dart:314:20: Error: Too few positional arguments: 2 required, 1 given.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                   ^
+Try again after fixing the above error(s).
+
+Performing hot restart...                                       
+lib/features/reading/verse_play_page.dart:314:48: Error: String starting with ' must end with '.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                                               ^^
+lib/features/reading/verse_play_page.dart:314:27: Error: Can't find ')' to match '('.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                          ^
+lib/features/reading/verse_play_page.dart:314:20: Error: Can't find ')' to match '('.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                   ^
+lib/features/reading/verse_play_page.dart:314:28: Error: Expected ';' after this.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                           ^^^^^^^^^^^^
+lib/features/reading/verse_play_page.dart:314:41: Error: Expected an identifier, but got ']'.
+Try inserting an identifier before ']'.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                                        ^
+lib/features/reading/verse_play_page.dart:314:41: Error: Unexpected token ';'.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                                        ^
+lib/features/reading/verse_play_page.dart:314:20: Error: Too few positional arguments: 2 required, 1 given.
+        .replaceAll(RegExp(r'[^A-Za-z\' ]'), ' ')
+                   ^
+Restarted application in 123ms.
+Try again after fixing the above error(s).
+flutter: VERSE_ID=1thess_1_8_niv
+flutter: RAW={version: NIV
+flutter: , segments: [{audioUrl: https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3, ko: 주님의 말씀이, t: The Lord's message
+flutter: }], textEn: The Lord's message rang out from you not only in Macedonia and Achaia—your faith in God has become known everywhere., ref: 1 Thessalonians 1:8}
+
+
+Performing hot restart...                                       
+Restarted application in 1,102ms.
+flutter: VERSE_ID=1thess_1_8_niv
+flutter: RAW={version: NIV
+flutter: , segments: [{audioUrl: https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3, ko: 주님의 말씀이, t: The Lord's message
+flutter: }], textEn: The Lord's message rang out from you not only in Macedonia and Achaia—your faith in God has become known everywhere., ref: 1 Thessalonians 1:8}
+Lost connection to device.
