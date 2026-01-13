@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '../../services/bible_text_parser.dart';
 
 class DevParseTestPage extends StatefulWidget {
+  static const routeName = '/dev_parse_test';
+
   const DevParseTestPage({super.key});
 
   @override
