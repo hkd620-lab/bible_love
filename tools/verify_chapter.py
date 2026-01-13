@@ -15,6 +15,7 @@ Options:
 Notes:
   - Input must contain NO blank lines.
   - Header line must match exact required format.
+  - Policy: EN is required; KO may be empty at this stage.
 """
 
 @dataclass
@@ -139,8 +140,11 @@ def main() -> None:
       fail(f"Verse order break between lines {verses[i-1].line_no} (N={nums[i-1]}) and {verses[i].line_no} (N={nums[i]}).")
 
   ok(f"Verses OK: count={len(verses)}, range=1..{max(nums)}")
-  if any(v.en.strip() == "" or v.ko.strip() == "" for v in verses):
-    warn("Some verses have empty EN or KO text.")
+
+  # Policy: EN must not be empty. KO may be empty for now.
+  if any(v.en.strip() == "" for v in verses):
+    warn("Some verses have empty EN text.")
+
   print("PASS")
 
 if __name__ == "__main__":

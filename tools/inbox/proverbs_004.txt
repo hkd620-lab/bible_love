@@ -1,29 +1,29 @@
 #BOOK=Proverbs|BOOKCODE=pro|CHAPTER=4|VERSION=KJV|LANGPAIR=EN-KO|ARCHAIC=INLINE_PARENS
-T|EN=Proverbs 4|KO=잠언 4장
-V|N=1|EN=Hear, ye children, the instruction of a father, and attend to know understanding.|KO=아이들아 아비의 훈계를 들으며 명철을 얻기에 주의하라
-V|N=2|EN=For I give you good doctrine, forsake ye not my law.|KO=내가 선한 도리를 너희에게 전하노니 내 법을 떠나지 말라
-V|N=3|EN=For I was my father's son, tender and only beloved in the sight of my mother.|KO=나도 내 아버지에게 아들이었으며 내 어머니 보시기에 유약한 외아들이었노라
-V|N=4|EN=He taught me also, and said unto me, Let thine heart retain my words: keep my commandments, and live.|KO=아버지가 내게 가르쳐 이르기를 내 말을 네 마음에 두라 내 명령을 지키라 그리하면 살리라
-V|N=5|EN=Get wisdom, get understanding: forget it not; neither decline from the words of my mouth.|KO=지혜를 얻으며 명철을 얻으라 잊지 말며 내 입의 말을 떠나지 말라
-V|N=6|EN=Forsake her not, and she shall preserve thee: love her, and she shall keep thee.|KO=지혜를 버리지 말라 그리하면 너를 보호하리라 지혜를 사랑하라 그리하면 너를 지키리라
-V|N=7|EN=Wisdom is the principal thing; therefore get wisdom: and with all thy getting get understanding.|KO=지혜가 제일이니 지혜를 얻으라 무릇 네가 얻은 것을 가지고 명철을 얻을지니라
-V|N=8|EN=Exalt her, and she shall promote thee: she shall bring thee to honour, when thou dost embrace her.|KO=지혜를 높이라 그리하면 지혜가 너를 높이 들리라 만일 지혜를 품으면 지혜가 너를 영화롭게 하리라
-V|N=9|EN=She shall give to thine head an ornament of grace: a crown of glory shall she deliver to thee.|KO=지혜가 아름다운 관을 네 머리에 두겠고 영화로운 면류관을 네게 주리라
-V|N=10|EN=Hear, O my son, and receive my sayings; and the years of thy life shall be many.|KO=내 아들아 들으라 내 말을 받으라 그리하면 네 생명의 해가 길리라
-V|N=11|EN=I have taught thee in the way of wisdom; I have led thee in right paths.|KO=내가 지혜의 길로 네게 가르쳤으며 정직한 길로 너를 인도하였은즉
-V|N=12|EN=When thou goest, thy steps shall not be straitened; and when thou runnest, thou shalt not stumble.|KO=다닐 때에 네 걸음이 곤고하지 아니하겠고 달려갈 때에 실족하지 아니하리라
-V|N=13|EN=Take fast hold of instruction; let her not go: keep her; for she is thy life.|KO=훈계를 굳게 잡아 놓치지 말고 지키라 이것이 네 생명이니라
-V|N=14|EN=Enter not into the path of the wicked, and go not in the way of evil men.|KO=사악한 자의 길에 들어가지 말며 악인의 길로 다니지 말지어다
-V|N=15|EN=Avoid it, pass not by it, turn from it, and pass away.|KO=그 길을 피하고 지나가지 말며 돌이켜 떠나갈지어다
-V|N=16|EN=For they sleep not, except they have done mischief; and their sleep is taken away, unless they cause some to fall.|KO=그들은 악을 행하지 못하면 자지 못하며 사람을 넘어뜨리지 못하면 잠이 오지 아니하며
-V|N=17|EN=For they eat the bread of wickedness, and drink the wine of violence.|KO=불의의 떡을 먹으며 강포의 술을 마심이니라
-V|N=18|EN=But the path of the just is as the shining light, that shineth more and more unto the perfect day.|KO=의인의 길은 돋는 햇볕 같아서 점점 빛나서 원만한 광명에 이르거니와
-V|N=19|EN=The way of the wicked is as darkness: they know not at what they stumble.|KO=악인의 길은 어둠 같아서 그들이 무엇에 걸려 넘어지는지 깨닫지 못하느니라
-V|N=20|EN=My son, attend to my words; incline thine ear unto my sayings.|KO=내 아들아 내 말에 주의하며 내가 말하는 것에 네 귀를 기울이라
-V|N=21|EN=Let them not depart from thine eyes; keep them in the midst of thine heart.|KO=그것을 네 눈에서 떠나게 하지 말며 네 마음 속에 지키라
-V|N=22|EN=For they are life unto those that find them, and health to all their flesh.|KO=이것은 얻는 자에게 생명이 되며 그의 온 육체의 건강이 됨이니라
-V|N=23|EN=Keep thy heart with all diligence; for out of it are the issues of life.|KO=무릇 지킬 만한 것보다 더욱 네 마음을 지키라 생명의 근원이 이에서 남이니라
-V|N=24|EN=Put away from thee a froward mouth, and perverse lips put far from thee.|KO=구부러진 말을 네 입에서 버리며 삐뚤어진 말을 네 입술에서 멀리하라
-V|N=25|EN=Let thine eyes look right on, and let thine eyelids look straight before thee.|KO=네 눈은 바로 보며 네 눈꺼풀은 네 앞을 곧게 살펴
-V|N=26|EN=Ponder the path of thy feet, and let all thy ways be established.|KO=네 발이 행할 길을 평탄하게 하며 네 모든 길을 든든히 하라
-V|N=27|EN=Turn not to the right hand nor to the left: remove thy foot from evil.|KO=좌로나 우로나 치우치지 말고 네 발을 악에서 떠나게 하라
+T|EN=Proverbs 4|KO=
+V|N=1|EN=Hear, ye children, the instruction of a father, and attend to know|KO=
+V|N=2|EN=For I give you good doctrine, forsake ye not my law.|KO=
+V|N=3|EN=For I was my father’s son, tender and only beloved in the sight of|KO=
+V|N=4|EN=He taught me also, and said unto me, Let thine heart retain my|KO=
+V|N=5|EN=Get wisdom, get understanding: forget it not; neither decline from|KO=
+V|N=6|EN=Forsake her not, and she shall preserve thee: love her, and she|KO=
+V|N=7|EN=Wisdom is the principal thing; therefore get wisdom: and with all|KO=
+V|N=8|EN=Exalt her, and she shall promote thee: she shall bring thee to|KO=
+V|N=9|EN=She shall give to thine head an ornament of grace: a crown of|KO=
+V|N=10|EN=Hear, O my son, and receive my sayings; and the years of thy life|KO=
+V|N=11|EN=I have taught thee in the way of wisdom; I have led thee in right|KO=
+V|N=12|EN=When thou goest, thy steps shall not be straitened; and when thou|KO=
+V|N=13|EN=Take fast hold of instruction; let her not go: keep her; for she|KO=
+V|N=14|EN=Enter not into the path of the wicked, and go not in the way of|KO=
+V|N=15|EN=Avoid it, pass not by it, turn from it, and pass away.|KO=
+V|N=16|EN=For they sleep not, except they have done mischief; and their|KO=
+V|N=17|EN=For they eat the bread of wickedness, and drink the wine of|KO=
+V|N=18|EN=But the path of the just is as the shining light, that shineth|KO=
+V|N=19|EN=The way of the wicked is as darkness: they know not at what they|KO=
+V|N=20|EN=My son, attend to my words; incline thine ear unto my sayings.|KO=
+V|N=21|EN=Let them not depart from thine eyes; keep them in the midst of|KO=
+V|N=22|EN=For they are life unto those that find them, and health to all|KO=
+V|N=23|EN=Keep thy heart with all diligence; for out of it are the issues|KO=
+V|N=24|EN=Put away from thee a froward mouth, and perverse lips put far|KO=
+V|N=25|EN=Let thine eyes look right on, and let thine eyelids look straight|KO=
+V|N=26|EN=Ponder the path of thy feet, and let all thy ways be established.|KO=
+V|N=27|EN=Turn not to the right hand nor to the left: remove thy foot from|KO=
