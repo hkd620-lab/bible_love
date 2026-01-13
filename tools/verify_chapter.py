@@ -1,11 +1,21 @@
 #!/usr/bin/env python3
-import sys, re
+import sys, re, os
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
 
 HEADER_RE = re.compile(r"^#BOOK=([^|]+)\|BOOKCODE=([a-z0-9_]+)\|CHAPTER=([0-9]+)\|VERSION=KJV\|LANGPAIR=EN-KO\|ARCHAIC=INLINE_PARENS$")
 TITLE_RE  = re.compile(r"^T\|EN=(.*)\|KO=(.*)$")
 VERSE_RE  = re.compile(r"^V\|N=([0-9]+)\|EN=(.*)\|KO=(.*)$")
+
+USAGE = """Usage:
+  python3 tools/verify_chapter.py <chapter_file_path>
+  cat <chapter_file_path> | python3 tools/verify_chapter.py -
+Options:
+  -h, --help    Show this help
+Notes:
+  - Input must contain NO blank lines.
+  - Header line must match exact required format.
+"""
 
 @dataclass
 class Verse:
@@ -24,9 +34,15 @@ def warn(msg: str) -> None:
 def ok(msg: str) -> None:
   print(f"OK: {msg}")
 
+def usage_exit(code: int = 0) -> None:
+  print(USAGE.rstrip("\n"))
+  sys.exit(code)
+
 def read_text(path: Optional[str]) -> str:
   if path is None or path == "-":
     return sys.stdin.read()
+  if not os.path.exists(path):
+    fail(f"file not found: {path}")
   with open(path, "r", encoding="utf-8") as f:
     return f.read()
 
@@ -72,7 +88,17 @@ def validate_verse(line: str, line_no: int) -> Verse:
   return Verse(n=n, en=en, ko=ko, line_no=line_no)
 
 def main() -> None:
-  path = sys.argv[1] if len(sys.argv) >= 2 else "-"
+  args = sys.argv[1:]
+
+  if len(args) == 0:
+    path = "-"
+  elif len(args) == 1:
+    if args[0] in ("-h", "--help"):
+      usage_exit(0)
+    path = args[0]
+  else:
+    usage_exit(2)
+
   text = read_text(path).strip("\n")
   if text.strip() == "":
     fail("Empty input.")
