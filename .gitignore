@@ -46,3 +46,4 @@ app.*.map.json
 
 # local backend (do not commit)
 backend/
+tools/source/raw/
