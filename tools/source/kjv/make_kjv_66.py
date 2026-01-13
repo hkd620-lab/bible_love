@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from pathlib import Path
 import re
 
@@ -20,7 +21,6 @@ BOOKMAP = {
     "The Second Book of Samuel": "2sa",
     "The First Book of the Kings": "1ki",
     "The Second Book of the Kings": "2ki",
-    # Variant headings seen in some texts
     "The Third Book of the Kings": "1ki",
     "The Fourth Book of the Kings": "2ki",
 
@@ -45,7 +45,7 @@ BOOKMAP = {
     "The Book of the Prophet Ezekiel": "ezk",
     "The Book of Daniel": "dan",
 
-    # Minor prophets (often appear as single-word headings in pg10)
+    # Minor prophets
     "Hosea": "hos",
     "Joel": "jol",
     "Amos": "amo",
@@ -84,7 +84,6 @@ BOOKMAP = {
     "The General Epistle of James": "jas",
     "The First Epistle General of Peter": "1pe",
     "The Second Epistle General of Peter": "2pe",
-    # Variant heading seen in some texts
     "The Second General Epistle of Peter": "2pe",
     "The First Epistle General of John": "1jn",
     "The Second Epistle General of John": "2jn",
@@ -95,46 +94,102 @@ BOOKMAP = {
     "The Revelation of Saint John the Divine": "rev",
 }
 
-verse_pat = re.compile(r'^(\d+):(\d+)\s+(.*\S)\s*$')
+# Find ALL chap:verse markers anywhere in a line (including mid-line)
+CV_RE = re.compile(r"(?<!\d)(\d+):(\d+)(?!\d)")
 
-current_book = None
-seen = set()
-out = []
-unknown_headers = set()
+IGNORE_RE = re.compile(r"^(CHAPTER|Chapter)\b")
 
-with src.open("r", encoding="utf-8", errors="replace") as f:
-    for raw in f:
-        line = raw.strip()
+def normalize_space(s: str) -> str:
+    return re.sub(r"\s+", " ", s).strip()
 
-        # Ignore alias headings used inside Samuel/Kings sections
-        if line in ("Otherwise Called:", "The First Book of the Kings", "The Second Book of the Kings"):
-            continue
+def flush(out, seen, book, chap, verse, parts):
+    if book is None or chap is None or verse is None:
+        return
+    text = normalize_space(" ".join(parts))
+    if not text:
+        return
+    key = (book, chap, verse)
+    if key in seen:
+        return
+    seen.add(key)
+    out.append(f"{book}\t{chap}:{verse}\t{text}")
 
-        # Book heading: accept any line that matches BOOKMAP keys
-        if line in BOOKMAP:
-            current_book = BOOKMAP[line]
-            continue
+def main():
+    if not src.exists():
+        raise SystemExit(f"FAIL: missing source file: {src}")
 
-        # Verse line
-        m = verse_pat.match(line)
-        if not m or current_book is None:
-            continue
+    current_book = None
 
-        chap = int(m.group(1))
-        verse = int(m.group(2))
-        text = m.group(3)
+    cur_chap = None
+    cur_verse = None
+    cur_parts = []
 
-        key = (current_book, chap, verse)
-        if key in seen:
-            continue
-        seen.add(key)
+    seen = set()
+    out = []
 
-        out.append(f"{current_book}\t{chap}:{verse}\t{text}")
+    with src.open("r", encoding="utf-8", errors="replace") as f:
+        for raw in f:
+            line = raw.strip()
+            if not line:
+                continue
 
-dst.parent.mkdir(parents=True, exist_ok=True)
-dst.write_text("\n".join(out) + "\n", encoding="utf-8")
+            # Ignore alias headings used inside Samuel/Kings sections
+            if line in ("Otherwise Called:", "The First Book of the Kings", "The Second Book of the Kings"):
+                continue
 
-print("written:", dst)
-print("lines:", len(out))
-# Book coverage quick info
-print("books:", len({b for (b,_,_) in seen}))
+            # Ignore chapter headers
+            if IGNORE_RE.match(line):
+                continue
+
+            # Book heading
+            if line in BOOKMAP:
+                flush(out, seen, current_book, cur_chap, cur_verse, cur_parts)
+                current_book = BOOKMAP[line]
+                cur_chap = None
+                cur_verse = None
+                cur_parts = []
+                continue
+
+            if current_book is None:
+                continue
+
+            # Split line by ALL chap:verse markers (including mid-line)
+            matches = list(CV_RE.finditer(line))
+            if not matches:
+                # continuation
+                if cur_chap is not None and cur_verse is not None:
+                    cur_parts.append(line)
+                continue
+
+            # If there is text before first marker, treat as continuation of current verse
+            first = matches[0]
+            prefix = line[:first.start()].strip()
+            if prefix and cur_chap is not None and cur_verse is not None:
+                cur_parts.append(prefix)
+
+            # Now process each marker segment
+            for idx, m in enumerate(matches):
+                chap = int(m.group(1))
+                verse = int(m.group(2))
+                seg_start = m.end()
+                seg_end = matches[idx + 1].start() if idx + 1 < len(matches) else len(line)
+                seg_text = line[seg_start:seg_end].strip()
+
+                # starting a new verse => flush previous
+                flush(out, seen, current_book, cur_chap, cur_verse, cur_parts)
+
+                cur_chap = chap
+                cur_verse = verse
+                cur_parts = [seg_text] if seg_text else []
+
+    flush(out, seen, current_book, cur_chap, cur_verse, cur_parts)
+
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    dst.write_text("\n".join(out) + "\n", encoding="utf-8")
+
+    print("written:", dst)
+    print("lines:", len(out))
+    print("books:", len({b for (b, _, _) in seen}))
+
+if __name__ == "__main__":
+    main()
