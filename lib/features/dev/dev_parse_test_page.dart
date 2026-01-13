@@ -53,7 +53,7 @@ V|N=3|EN=To receive the instruction of wisdom, justice, and judgment, and equity
     });
   }
 
-  BibleParsedChapter _parseOrThrow() {
+  dynamic _parseOrThrow() {
     final input = _controller.text;
     if (input.trim().isEmpty) {
       throw const FormatException('Input is empty.');
@@ -67,12 +67,11 @@ V|N=3|EN=To receive the instruction of wisdom, justice, and judgment, and equity
       final parsed = _parseOrThrow();
 
       _append('OK: header');
-      _append('  BOOK=${parsed.book}');
-      _append('  BOOKCODE=${parsed.bookCode}');
-      _append('  CHAPTER=${parsed.chapter}');
-      _append('  VERSION=${parsed.version}');
-      _append('  LANGPAIR=${parsed.langPair}');
-      _append('  ARCHAIC=${parsed.archaic}');
+      _append('  BOOK=${parsed.header.book}');
+      _append('  BOOKCODE=${parsed.header.bookCode}');
+      _append('  CHAPTER=${parsed.header.chapter}');
+      _append('  VERSION=${parsed.header.version}');
+      _append('  LANGPAIR=${parsed.header.langPair}');
       _append('OK: title');
       _append('  EN=${parsed.titleEn}');
       _append('  KO=${parsed.titleKo}');
@@ -82,10 +81,10 @@ V|N=3|EN=To receive the instruction of wisdom, justice, and judgment, and equity
         final first = parsed.verses.first;
         final last = parsed.verses.last;
         _append(
-          'first: N=${first.number} id=${BibleTextParser.verseId(bookCode: parsed.bookCode, chapter: parsed.chapter, verse: first.number)}',
+          'first: N=${first.number} id=${BibleTextParser.verseId(bookCode: parsed.header.bookCode, chapter: parsed.header.chapter, verse: first.number)}',
         );
         _append(
-          'last : N=${last.number} id=${BibleTextParser.verseId(bookCode: parsed.bookCode, chapter: parsed.chapter, verse: last.number)}',
+          'last : N=${last.number} id=${BibleTextParser.verseId(bookCode: parsed.header.bookCode, chapter: parsed.header.chapter, verse: last.number)}',
         );
       }
     } catch (e, st) {
@@ -103,18 +102,17 @@ V|N=3|EN=To receive the instruction of wisdom, justice, and judgment, and equity
       final firestore = FirebaseFirestore.instance;
 
       final chapterId =
-          '${parsed.bookCode}_${parsed.chapter.toString().padLeft(3, '0')}';
+          '${parsed.header.bookCode}_${parsed.header.chapter.toString().padLeft(3, '0')}';
       final chapterRef =
           firestore.collection(kChapterCollection).doc(chapterId);
 
       final chapterData = <String, dynamic>{
         'id': chapterId,
-        'book': parsed.book,
-        'bookCode': parsed.bookCode,
-        'chapter': parsed.chapter,
-        'version': parsed.version, // KJV
-        'langPair': parsed.langPair, // EN-KO
-        'archaic': parsed.archaic, // INLINE_PARENS
+        'book': parsed.header.book,
+        'bookCode': parsed.header.bookCode,
+        'chapter': parsed.header.chapter,
+        'version': parsed.header.version, // KJV
+        'langPair': parsed.header.langPair, // EN-KO
         'titleEn': parsed.titleEn,
         'titleKo': parsed.titleKo,
         'verseCount': parsed.verses.length,
@@ -154,8 +152,8 @@ V|N=3|EN=To receive the instruction of wisdom, justice, and judgment, and equity
         }
 
         final vid = BibleTextParser.verseId(
-          bookCode: parsed.bookCode,
-          chapter: parsed.chapter,
+          bookCode: parsed.header.bookCode,
+          chapter: parsed.header.chapter,
           verse: v.number,
         );
 
@@ -163,10 +161,10 @@ V|N=3|EN=To receive the instruction of wisdom, justice, and judgment, and equity
         final verseData = <String, dynamic>{
           'id': vid,
           'n': v.number,
-          'book': parsed.book,
-          'bookCode': parsed.bookCode,
-          'chapter': parsed.chapter,
-          'version': parsed.version,
+          'book': parsed.header.book,
+          'bookCode': parsed.header.bookCode,
+          'chapter': parsed.header.chapter,
+          'version': parsed.header.version,
           'en': v.en,
           'ko': v.ko,
           'updatedAt': FieldValue.serverTimestamp(),
