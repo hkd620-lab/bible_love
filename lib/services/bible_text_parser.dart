@@ -69,6 +69,10 @@ class ParsedChapter {
   });
 }
 
+/// When true, archaic tokens like "taketh" must include inline gloss "(takes)".
+/// For now we keep this OFF to allow gradual rollout.
+const bool kRequireArchaicInlineGloss = false;
+
 class BibleTextParser {
   /// Project-wide archaic -> modern gloss mapping.
   /// Extend as you encounter more KJV archaic forms.
@@ -114,7 +118,8 @@ class BibleTextParser {
 
     // (1) Header
     final headerLine = lines.first;
-    final header = _parseHeader(headerLine, strict: strict, expectedBookCode: expectedBookCode);
+    final header = _parseHeader(headerLine,
+        strict: strict, expectedBookCode: expectedBookCode);
 
     // (2) Title
     if (lines.length < 2) {
@@ -164,15 +169,23 @@ class BibleTextParser {
       //
       // We allow punctuation after the closing paren (e.g., ye(you),)
       // But we do NOT allow token followed by "(wrong)" or token without parentheses.
-      final unglossed = RegExp(r'\b' + RegExp.escape(token) + r'\b(?!\(' + RegExp.escape(modern) + r'\))');
+      final unglossed = RegExp(r'\b' +
+          RegExp.escape(token) +
+          r'\b(?!\(' +
+          RegExp.escape(modern) +
+          r'\))');
       if (unglossed.hasMatch(enText)) {
-        throw FormatException('Archaic token "$token" missing required "($modern)" at verse $verseNumber.');
+        if (kRequireArchaicInlineGloss) {
+          throw FormatException(
+              'Archaic token "$token" missing required "($modern)" at verse $verseNumber.');
+        }
       }
 
       // Additionally, if token(modern) appears, ensure there is NO space like "token (modern)".
       final spaced = RegExp(r'\b' + RegExp.escape(token) + r'\s+\(');
       if (spaced.hasMatch(enText)) {
-        throw FormatException('Whitespace before archaic gloss is not allowed at verse $verseNumber.');
+        throw FormatException(
+            'Whitespace before archaic gloss is not allowed at verse $verseNumber.');
       }
     }
   }
@@ -226,14 +239,22 @@ class BibleTextParser {
       map[k] = v;
     }
 
-    const requiredKeys = ['BOOK', 'BOOKCODE', 'CHAPTER', 'VERSION', 'LANGPAIR', 'ARCHAIC'];
+    const requiredKeys = [
+      'BOOK',
+      'BOOKCODE',
+      'CHAPTER',
+      'VERSION',
+      'LANGPAIR',
+      'ARCHAIC'
+    ];
     for (final k in requiredKeys) {
       if (!map.containsKey(k)) {
         throw FormatException('Header missing required key: $k');
       }
     }
     if (strict && map.keys.length != requiredKeys.length) {
-      throw FormatException('Header contains extra keys: ${map.keys.where((k) => !requiredKeys.contains(k)).toList()}');
+      throw FormatException(
+          'Header contains extra keys: ${map.keys.where((k) => !requiredKeys.contains(k)).toList()}');
     }
 
     final book = map['BOOK']!;
@@ -257,7 +278,8 @@ class BibleTextParser {
         throw const FormatException('ARCHAIC must be INLINE_PARENS.');
       }
       if (expectedBookCode != null && bookCode != expectedBookCode) {
-        throw FormatException('BOOKCODE must be "$expectedBookCode" but was "$bookCode".');
+        throw FormatException(
+            'BOOKCODE must be "$expectedBookCode" but was "$bookCode".');
       }
     }
 
@@ -305,7 +327,8 @@ class BibleTextParser {
       }
     }
     if (strict && map.keys.length != required.length) {
-      throw FormatException('Title contains extra keys: ${map.keys.where((k) => !required.contains(k)).toList()}');
+      throw FormatException(
+          'Title contains extra keys: ${map.keys.where((k) => !required.contains(k)).toList()}');
     }
 
     final en = map['EN']!;
@@ -319,7 +342,8 @@ class BibleTextParser {
     return (en, ko);
   }
 
-  static List<VerseLine> _parseVerses(List<String> lines, {required bool strict}) {
+  static List<VerseLine> _parseVerses(List<String> lines,
+      {required bool strict}) {
     final verses = <VerseLine>[];
 
     for (final line in lines) {
@@ -335,7 +359,8 @@ class BibleTextParser {
       for (final p in parts.skip(1)) {
         final idx = p.indexOf('=');
         if (idx <= 0 || idx == p.length - 1) {
-          throw FormatException('Invalid verse token "$p". Expected KEY=VALUE.');
+          throw FormatException(
+              'Invalid verse token "$p". Expected KEY=VALUE.');
         }
         final k = p.substring(0, idx);
         final v = p.substring(idx + 1);
@@ -349,7 +374,8 @@ class BibleTextParser {
         }
       }
       if (strict && map.keys.length != required.length) {
-        throw FormatException('Verse contains extra keys: ${map.keys.where((k) => !required.contains(k)).toList()}');
+        throw FormatException(
+            'Verse contains extra keys: ${map.keys.where((k) => !required.contains(k)).toList()}');
       }
 
       final nStr = map['N']!;
@@ -369,7 +395,8 @@ class BibleTextParser {
         final hasOpen = ko.contains('“');
         final hasClose = ko.contains('”');
         if (hasOpen != hasClose) {
-          throw FormatException('KO quotes must open and close on the same line (N=$n).');
+          throw FormatException(
+              'KO quotes must open and close on the same line (N=$n).');
         }
       }
 
@@ -381,7 +408,8 @@ class BibleTextParser {
       for (int i = 0; i < verses.length; i++) {
         final expected = i + 1;
         if (verses[i].number != expected) {
-          throw FormatException('Verse numbering must be continuous starting at 1. Expected $expected but got ${verses[i].number}.');
+          throw FormatException(
+              'Verse numbering must be continuous starting at 1. Expected $expected but got ${verses[i].number}.');
         }
       }
     }

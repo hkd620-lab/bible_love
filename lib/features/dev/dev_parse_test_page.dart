@@ -44,7 +44,16 @@ class _DevParseTestPageState extends State<DevParseTestPage> {
     }
   }
 
+  Future<void> _loadProverbs1FromAsset() async {
+    final text = await rootBundle.loadString('assets/dev/proverbs_001.txt');
+
+    _controller.text = text;
+
+    _runParseTest();
+  }
+
   void _runParseTest() {
+    setState(() => _log = '');
     _clearLog();
 
     try {
@@ -81,7 +90,7 @@ class _DevParseTestPageState extends State<DevParseTestPage> {
               runSpacing: 8,
               children: [
                 ElevatedButton(
-                  onPressed: () => _loadAssetChapter('assets/chapters/proverbs_001.txt'),
+                  onPressed: _loadProverbs1FromAsset,
                   child: const Text('Load Proverbs 1 (asset)'),
                 ),
                 ElevatedButton(
